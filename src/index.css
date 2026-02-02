@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Design tokens (Figma) – use in components via Tailwind or CSS vars */
+/* Primary: #901CDB | Text: #141416, #353945, #777E90 | Border: #E6E8EC | Success: #34C759 | Error: #FF3B30 | Background: #FCFDFC, #F4F5F6 */
+
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -24,4 +27,13 @@
 
 .font-kodchasan {
   font-family: 'Kodchasan', sans-serif;
+}
+
+/* Hide scrollbar for category horizontal scroll on mobile */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

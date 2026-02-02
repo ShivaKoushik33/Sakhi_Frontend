@@ -12,8 +12,8 @@ export default function OrderCard({ order }) {
       : 'text-[#353945] border-[#E6E8EC] bg-white';
 
   return (
-    <div className="w-full bg-white border border-[#E6E8EC] rounded-xl p-5 flex items-center gap-5">
-      <div className="w-[84px] h-[84px] rounded-lg overflow-hidden border border-[#E6E8EC] bg-[#FCFDFC] flex-shrink-0">
+    <div className="w-full bg-white border border-[#E6E8EC] rounded-xl p-4 md:p-5 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 md:gap-5">
+      <div className="w-full sm:w-[84px] h-[120px] sm:h-[84px] rounded-lg overflow-hidden border border-[#E6E8EC] bg-[#FCFDFC] flex-shrink-0">
         <img
           src={order.productImage}
           alt={order.productName}
@@ -21,22 +21,24 @@ export default function OrderCard({ order }) {
         />
       </div>
 
-      <div className="flex-1 min-w-0">
-        <div className="text-base font-semibold text-[#141416] truncate">
-          {order.productName}
+      <div className="flex-1 min-w-0 flex flex-col sm:flex-row sm:items-center gap-2 md:gap-4">
+        <div className="flex-1 min-w-0">
+          <div className="text-sm md:text-base font-semibold text-[#141416] truncate">
+            {order.productName}
+          </div>
+          <div className="text-xs md:text-sm text-[#777E90] mt-0.5">{order.orderId}</div>
+          <div className="text-xs md:text-sm text-[#777E90] mt-0.5">{order.orderDate}</div>
         </div>
-        <div className="text-sm text-[#777E90] mt-1">{order.orderId}</div>
-        <div className="text-sm text-[#777E90] mt-1">{order.orderDate}</div>
-      </div>
 
-      <div className="flex flex-col items-end gap-2 flex-shrink-0">
-        <div className="text-base font-semibold text-[#141416]">
-          ₹{Number(order.price).toLocaleString()}
-        </div>
-        <div
-          className={`px-3 py-1 rounded-full border text-sm ${toneClasses}`}
-        >
-          {order.status}
+        <div className="flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-2 flex-shrink-0">
+          <div className="text-sm md:text-base font-semibold text-[#141416]">
+            ₹{Number(order.price).toLocaleString()}
+          </div>
+          <div
+            className={`px-2 md:px-3 py-1 rounded-full border text-xs md:text-sm ${toneClasses}`}
+          >
+            {order.status}
+          </div>
         </div>
       </div>
     </div>

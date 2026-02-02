@@ -13,9 +13,9 @@ export default function AddAddress() {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="max-w-[1440px] mx-auto px-[120px] py-10">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-[120px] py-6 md:py-10">
         {pageUi?.title && (
-          <h1 className="text-3xl font-bold text-[#141416] mb-8">
+          <h1 className="text-2xl md:text-3xl font-bold text-[#141416] mb-6 md:mb-8">
             {pageUi.title}
           </h1>
         )}
@@ -69,7 +69,7 @@ export default function AddAddress() {
               </div>
             )}
 
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {fields?.landmarkLabel && (
                 <div className="flex flex-col gap-1">
                   <label className="text-sm text-[#141416]">
@@ -95,7 +95,7 @@ export default function AddAddress() {
               )}
             </div>
 
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {fields?.cityLabel && (
                 <div className="flex flex-col gap-1">
                   <label className="text-sm text-[#141416]">
@@ -123,7 +123,7 @@ export default function AddAddress() {
             {pageUi?.primaryCtaText && (
               <button
                 type="button"
-                className="mt-4 w-[200px] h-[44px] bg-[#901CDB] text-white rounded-lg text-base font-medium hover:bg-[#7A16C0] transition-colors"
+                className="mt-4 w-full sm:w-[200px] h-[44px] bg-[#901CDB] text-white rounded-lg text-base font-medium hover:bg-[#7A16C0] transition-colors"
               >
                 {pageUi.primaryCtaText}
               </button>

@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
+import MobileBottomNav from '../components/common/MobileBottomNav';
+import ProfileLayout from '../components/profile/ProfileLayout';
 import Home from '../pages/Home';
 import Products from '../pages/Products';
 import ProductDetails from '../pages/ProductDetails';
@@ -13,11 +15,12 @@ import MyOrders from '../pages/MyOrders';
 import Addresses from '../pages/Addresses';
 import BankDetails from '../pages/BankDetails';
 import AddAddress from '../pages/AddAddress';
+import EditAddress from '../pages/EditAddress';
 
 export default function AppRoutes() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen pb-16 lg:pb-0">
         <Navbar />
         <main className="flex-grow">
           <Routes>
@@ -28,14 +31,18 @@ export default function AppRoutes() {
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/profile/orders" element={<MyOrders />} />
-            <Route path="/profile/addresses" element={<Addresses />} />
-            <Route path="/profile/bank-details" element={<BankDetails />} />
-            <Route path="/profile/addresses/new" element={<AddAddress />} />
+            <Route path="/profile" element={<ProfileLayout />}>
+              <Route index element={<Profile />} />
+              <Route path="orders" element={<MyOrders />} />
+              <Route path="addresses" element={<Addresses />} />
+              <Route path="addresses/new" element={<AddAddress />} />
+              <Route path="addresses/:id/edit" element={<EditAddress />} />
+              <Route path="bank-details" element={<BankDetails />} />
+            </Route>
           </Routes>
         </main>
         <Footer />
+        <MobileBottomNav />
       </div>
     </Router>
   );

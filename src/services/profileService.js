@@ -3,13 +3,26 @@
 
 const UI = {
   pages: {
+    profile: {
+      title: 'Personal Information',
+      subtitle: 'Manage your account details',
+      fields: {
+        fullNameLabel: 'Full Name',
+        emailLabel: 'Email',
+        phoneLabel: 'Phone Number',
+        fullNamePlaceholder: 'Enter your full name',
+        emailPlaceholder: 'Enter your email',
+        phonePlaceholder: '+91 XXXXX XXXXX',
+      },
+      primaryCtaText: 'Save Changes',
+    },
     myOrders: {
       title: 'My Orders',
       empty: {
         title: 'No Items Ordered Yet',
         subtitle: 'Oops! No items get ordered',
         primaryCtaText: 'Keep shopping',
-        illustration: '/api/placeholder/520/360',
+        illustration: '/images/empty-state.svg',
       },
     },
     addresses: {
@@ -19,13 +32,35 @@ const UI = {
         title: 'No addresses added',
         subtitle: 'Add an address to get faster checkout',
         primaryCtaText: 'Add New Address',
-        illustration: '/api/placeholder/520/360',
+        illustration: '/images/empty-state.svg',
       },
     },
     addAddress: {
       title: 'Add New Address',
       useCurrentLocationText: 'Use my current location',
       primaryCtaText: 'Add Address',
+      fields: {
+        nameLabel: 'Name*',
+        phoneLabel: 'Phone Number*',
+        addressLabel: 'Address (Area and Street)*',
+        landmarkLabel: 'Landmark(optional)',
+        pincodeLabel: 'Pincode*',
+        cityLabel: 'City/town*',
+        stateLabel: 'State*',
+        namePlaceholder: 'Enter your name',
+        phonePlaceholder: '+91XXXXXXXXXX',
+        addressPlaceholder: 'Enter Area and street no.',
+        landmarkPlaceholder: 'Enter landmark',
+        pincodePlaceholder: 'Enter pincode',
+        cityPlaceholder: 'Enter city/town',
+        statePlaceholder: 'Select State',
+        addressErrorText: 'Please fill the address',
+      },
+    },
+    editAddress: {
+      title: 'Edit Address',
+      useCurrentLocationText: 'Use my current location',
+      primaryCtaText: 'Update Address',
       fields: {
         nameLabel: 'Name*',
         phoneLabel: 'Phone Number*',
@@ -51,7 +86,7 @@ const UI = {
         title: 'No bank details added',
         subtitle: 'Add bank or UPI details for faster refunds',
         primaryCtaText: 'Add bank details',
-        illustration: '/api/placeholder/520/360',
+        illustration: '/images/empty-state.svg',
       },
     },
   },
@@ -59,6 +94,12 @@ const UI = {
     editText: 'Edit',
     deleteText: 'Delete',
   },
+};
+
+const mockPersonalInfo = {
+  fullName: 'Shaik Muzammil',
+  email: 'muzammil@example.com',
+  phone: '+91 7032371104',
 };
 
 const mockOrders = [
@@ -78,7 +119,7 @@ const mockOrders = [
     id: 2,
     orderId: 'TSJ-ORD-10294',
     productName: 'Rose Gold Princess Earrings',
-    productImage: '/api/placeholder/120/120',
+    productImage: '/images/product-ring-56586a.png',
     price: 2599,
     orderDate: '03 Jan 2026',
     status: 'Shipped',
@@ -161,11 +202,21 @@ export async function getUserAddresses() {
   return withDelay(mockAddresses);
 }
 
+export async function getAddressById(addressId) {
+  const id = Number(addressId);
+  const found = mockAddresses.find((a) => a.id === id);
+  return withDelay(found || null);
+}
+
 export async function getBankAndUpiDetails() {
   return withDelay(mockBankAndUpiDetails);
 }
 
 export async function getProfileUi() {
   return withDelay(UI);
+}
+
+export async function getPersonalInfo() {
+  return withDelay(mockPersonalInfo);
 }
 

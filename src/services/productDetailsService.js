@@ -12,23 +12,23 @@ const mockProductDetails = {
   description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
   material: 'Made With Pure 925 Silver',
   images: [
-    '/api/placeholder/500/500',
-    '/api/placeholder/500/500',
-    '/api/placeholder/500/500',
-    '/api/placeholder/500/500',
-    '/api/placeholder/500/500'
+    '/images/product-ring-56586a.png',
+    '/images/hero-banner-112775.png',
+    '/images/product-ring-56586a.png',
+    '/images/testimonial-1-56586a.png',
+    '/images/product-ring-56586a.png'
   ],
   finishes: [
     {
       id: 1,
       name: 'ROSE GOLD',
-      image: '/api/placeholder/100/100',
+      image: '/images/product-ring-56586a.png',
       selected: true
     },
     {
       id: 2,
       name: 'SILVER',
-      image: '/api/placeholder/100/100',
+      image: '/images/product-ring-56586a.png',
       selected: false
     }
   ],
@@ -77,7 +77,7 @@ const mockProductDetails = {
       date: '11/19/2025',
       rating: 5,
       review: 'Excellent collection with good offer',
-      image: '/api/placeholder/200/200'
+      image: '/images/testimonial-1-56586a.png'
     },
     {
       id: 2,
@@ -85,7 +85,7 @@ const mockProductDetails = {
       date: '11/19/2025',
       rating: 5,
       review: 'I just love it just a small suggestion please display the weight of the item so the customer are aware how much grams he will get. Love it 🥰',
-      image: '/api/placeholder/200/200'
+      image: '/images/testimonial-1-56586a.png'
     },
     {
       id: 3,
@@ -93,7 +93,7 @@ const mockProductDetails = {
       date: '11/19/2025',
       rating: 5,
       review: 'Excellent collection with good offer',
-      image: '/api/placeholder/200/200'
+      image: '/images/testimonial-1-56586a.png'
     },
     {
       id: 4,
@@ -101,7 +101,7 @@ const mockProductDetails = {
       date: '11/19/2025',
       rating: 5,
       review: 'Excellent collection with good offer',
-      image: '/api/placeholder/200/200'
+      image: '/images/testimonial-1-56586a.png'
     }
   ],
   aggregateRating: {
