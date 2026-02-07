@@ -16,8 +16,8 @@ export default function ProductDetails() {
         const data = await getProductDetailsData(id);
         setProduct(data);
         setSelectedFinish(data.finishes?.find(f => f.selected) || data.finishes?.[0]);
-      } catch (error) {
-        console.error('Error fetching product details:', error);
+      } catch {
+        setProduct(null);
       } finally {
         setLoading(false);
       }

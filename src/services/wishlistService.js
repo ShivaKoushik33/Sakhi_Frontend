@@ -52,24 +52,23 @@ const mockWishlistProducts = [
   }
 ];
 
-const mockEmptyWishlist = {
-  isEmpty: true,
-  illustration: '/api/placeholder/400/400',
+const mockEmptyWishlistState = {
+  illustration: '/images/empty-state.svg',
   title: 'Empty Wishlist',
   subtitle: 'Oops! No items Added to wishlist',
-  buttonText: 'Add Items to wishlist'
+  buttonText: 'Add Items to wishlist',
 };
 
 export async function getWishlistData() {
-  // Simulate API delay
   return new Promise((resolve) => {
     setTimeout(() => {
-      // Change isEmpty to false to show products
       resolve({
-        isEmpty: false,
+        isEmpty: true,
+        products: [],
         products: mockWishlistProducts,
-        emptyState: mockEmptyWishlist
+        // emptyState: mockEmptyWishlistState,
       });
     }, 300);
   });
 }
+

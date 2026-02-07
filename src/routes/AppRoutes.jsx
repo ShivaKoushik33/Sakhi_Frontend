@@ -8,6 +8,8 @@ import Products from '../pages/Products';
 import ProductDetails from '../pages/ProductDetails';
 import Cart from '../pages/Cart';
 import Wishlist from '../pages/Wishlist';
+import BuyNowReview from '../pages/BuyNowReview';
+import BuyNowPayment from '../pages/BuyNowPayment';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Profile from '../pages/Profile';
@@ -29,6 +31,8 @@ export default function AppRoutes() {
             <Route path="/products/:id" element={<ProductDetails />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/checkout/review" element={<BuyNowReview />} />
+            <Route path="/checkout/payment" element={<BuyNowPayment />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<ProfileLayout />}>
